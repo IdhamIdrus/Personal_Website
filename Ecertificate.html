@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Certificate Collection</title>
+    <link rel="icon" href="C:\Users\user\Desktop\Personal_Website\Prop\icons8-home-avantgarde-16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f0f0;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Box */
+        .header-box {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        .logo {
+            font-family: , sans-serif;
+            font-size: 24px;
+            float: left;
+            margin-left: 20px;
+            color: #ffffff;
+        }
+
+        .navigation {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        /* Content Layout */
+        .content-layout {
+            display: flex;
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .right-content {
+            width: 100%; /* Use 100% width for the right content */
+        }
+
+        /* New styles for E-Certificate page */
+        .certificate-layout {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .certificate-card {
+            width: 30%;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer; /* Add cursor pointer for clickable effect */
+        }
+
+        .certificate-card:hover {
+            transform: scale(1.05);
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .certificate-details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Responsive design for smaller screens */
+        @media screen and (max-width: 768px) {
+            .certificate-card {
+                width: 48%; /* Display two certificates per row */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .certificate-card {
+                width: 100%;
+            }
+        }
+
+        /* Additional styles for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 50%;
+            max-height: 50%;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Box -->
+    <div class="header-box">
+        <!-- Logo Name -->
+        <a href="Index.html">
+            <div class="logo">Idham Idrus &#127775; </div>
+        </a>
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="Index.html">Journey</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="Artwork.html">Artwork</a>
+            <a href="Ecertificate.html">E-Certificate Collection</a>
+            <a href="About.html">About Me</a>
+        </div>
+    </div>
+
+    <!-- Content Layout -->
+    <div class="content-layout">
+
+        <!-- Right Content (E-Certificate Collection) -->
+        <div class="right-content">
+            <!-- E-Certificate Collection -->
+            <div class="certificate-layout">
+                <!-- Certificate 1 -->
+                <div class="certificate-card" onclick="openModal('modal1')">
+                    <img class="certificate-image" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\eCerT.my- PNM1024_1.jpg" alt="Certificate 1">
+                    <div class="certificate-details">
+                        <h3>Certificate of Appreciation</h3>
+                        <p>Issued by: National Library of Malaysia</p>
+                        <p>Date: 24 October, 2021 - 31 October, 2021</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card" onclick="openModal('modal2')">
+                    <img class="certificate-image" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\go-digital-certificate_page-0001.jpg" alt="Certificate 2">
+                    <div class="certificate-details">
+                        <h3>Certificate of Completion</h3>
+                        <p>Issued by: The Asia Foundation</p>
+                        <p>Date: 23 October, 2021</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card" onclick="openModal('modal3')">
+                    <img class="certificate-image" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\eCerT.my-PNM POSTER DIGITAL JOM BACA_page-0001.jpg" alt="Certificate 3">
+                    <div class="certificate-details">
+                        <h3>Certificate of Appreciation</h3>
+                        <p>Issued by: National Library of Malaysia</p>
+                        <p>Date: 14 Mar, 2022 - 7 April, 2022</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card" onclick="openModal('modal4')">
+                    <img class="certificate-image" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\E-SIJIL HBN WANGSA MAJU (Fixed)_page-0001.jpg" alt="Certificate 4">
+                    <div class="certificate-details">
+                        <h3>Certificate of Participation</h3>
+                        <p>Issued by: Youth & Sports Department W.P. Kuala Lumpur</p>
+                        <p>Date: 9 & 10 September, 2022</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-card" onclick="openModal('modal5')">
+                    <img class="certificate-image" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\Kuiz cekap Bahasa Jawi Certificate_page-0001.jpg" alt="Certificate 5">
+                    <div class="certificate-details">
+                        <h3>Certificate of Participation</h3>
+                        <p>Issued by: Perlis State Public Library</p>
+                        <p>Date: 21 November, 2022</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="certificate-card" onclick="openModal('modal6')">
+                    <img class="certificate-image" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\E-SIJIL PENYERTAAN WEBINAR HARI REPTILIA SEDUNIA 2021 MUHAMMAD IDHAM BIN IDRUS_page-0001.jpg" alt="Certificate 6">
+                    <div class="certificate-details">
+                        <h3>Certificate of Participation</h3>
+                        <p>Issued by: EcoNinja Organization</p>
+                        <p>Date: 21 October, 2021</p>
+                    </div>
+                </div>
+
+                <!-- Add more certificate cards as needed -->
+
+                <!-- Modal for Certificate 1 -->
+                <div id="modal1" class="modal" onclick="closeModal('modal1')">
+                    <div class="modal-content">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\eCerT.my- PNM1024_1.jpg" alt="Certificate 1">
+                    </div>
+                </div>
+
+                <!-- Modal for Certificate 2 -->
+                <div id="modal2" class="modal" onclick="closeModal('modal2')">
+                    <div class="modal-content">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\go-digital-certificate_page-0001.jpg" alt="Certificate 2">
+                    </div>
+                </div>
+
+                <!-- Modal for Certificate 3 -->
+                <div id="modal3" class="modal" onclick="closeModal('modal3')">
+                    <div class="modal-content">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\eCerT.my-PNM POSTER DIGITAL JOM BACA_page-0001.jpg" alt="Certificate 3">
+                    </div>
+                </div>
+
+                <!-- Modal for Certificate 4 -->
+                <div id="modal4" class="modal" onclick="closeModal('modal4')">
+                    <div class="modal-content">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\E-SIJIL HBN WANGSA MAJU (Fixed)_page-0001.jpg" alt="Certificate 4">
+                    </div>
+                </div>
+
+                <!-- Modal for Certificate 5 -->
+                <div id="modal5" class="modal" onclick="closeModal('modal5')">
+                    <div class="modal-content">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\Kuiz cekap Bahasa Jawi Certificate_page-0001.jpg" alt="Certificate 5">
+                    </div>
+                </div>
+
+                <!-- Modal for Certificate 6 -->
+                <div id="modal6" class="modal" onclick="closeModal('modal6')">
+                    <div class="modal-content">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\E-Certificate\E-SIJIL PENYERTAAN WEBINAR HARI REPTILIA SEDUNIA 2021 MUHAMMAD IDHAM BIN IDRUS_page-0001.jpg" alt="Certificate 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div style="background: rgba(0, 0, 0, 0.9); padding: 10px; text-align: center; color: white;">
+            &copy; 2023-2024 Idham Idrus. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript for modal functionality -->
+    <script>
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = 'none';
+        }
+
+        // Function to scroll to the top of the page beforeunload (refresh)
+        window.addEventListener('beforeunload', function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+
+</html>

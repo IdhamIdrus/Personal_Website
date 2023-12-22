@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mambau Ice-Candies</title>
+    <link rel="icon" href="C:\Users\user\Desktop\Personal_Website\Prop\icons8-home-avantgarde-16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Navigation styles */
+        .header-box {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        .logo {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            float: left;
+            margin-left: 20px;
+            color: #ffffff;
+        }
+
+        .navigation {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Additional styles for the new sections */
+        .content-section {
+            text-align: center;
+            margin-top: 70px;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+        }
+
+        /* Invisible Table Styles */
+        .invisible-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .invisible-table-row {
+            display: table;
+            width: 100%;
+        }
+
+        .invisible-table-cell {
+            display: table-cell;
+            vertical-align: top;
+            padding: 5px;
+        }
+
+        .pictures-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .left-pictures,
+        .right-pictures {
+            width: auto%; /* Adjust the width as needed */
+            max-width: 300px; /* Set a maximum width to maintain responsiveness */
+            margin: auto; /* Center the pictures */
+        }
+
+        .middle-picture {
+            width: 100%; /* Adjust the width as needed */
+            max-width: 400px; /* Set a maximum width to maintain responsiveness */
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .picture {
+            width: 100%;
+            height: 150px; /* Set a fixed height for the pictures */
+            object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            overflow: hidden;
+            margin-bottom: 10px; /* Add margin to create space between pictures */
+        }
+
+        .picture:hover {
+            transform: scale(1.1);
+        }
+
+        .text-section {
+            text-align: justify;
+            color: #333333;
+            font-size: 18px;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 4;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .lightbox-close {
+            color: #ffffff;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+		
+		/* Footer styles */
+		footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-family: arial;
+        }
+		
+		
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Box -->
+    <div class="header-box">
+        <!-- Logo Name -->
+        <a href="Index.html">
+            <div class="logo">Idham Idrus &#127775; </div>
+        </a>
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="Index.html">Journey</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="Artwork.html">Artwork</a>
+            <a href="Ecertificate.html">E-Certificate Collection</a>
+            <a href="About.html">About Me</a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content-section">
+
+        <!-- Invisible Table for Layout -->
+        <div class="invisible-table">
+            <div class="invisible-table-row">
+
+                <!-- Left Section with 3 Pictures -->
+                <div class="invisible-table-cell">
+                    <div class="pictures-section left-pictures">
+                        <img class="picture" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\MambauIceCream\photo_2023-12-12_23-14-54.jpg" alt="Ice Candy Flavor 1" onclick="openLightbox(this.src)">
+                        <img class="picture" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\MambauIceCream\photo_2023-12-12_23-14-49.jpg" alt="Ice Candy Flavor 1" onclick="openLightbox(this.src)">
+                        <img class="picture" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\MambauIceCream\photo_2023-12-12_23-14-58.jpg" alt="Ice Candy Flavor 1" onclick="openLightbox(this.src)">
+                        <!-- Add other left pictures here -->
+                    </div>
+                </div>
+
+                <!-- Middle Section with 1 Vertical Picture -->
+                <div class="invisible-table-cell">
+                    <div class="pictures-section">
+                        <img class="middle-picture" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\MambauIceCream\photo_2023-12-12_23-14-27.jpg" alt="Ice Candy Flavor 1">
+                    </div>
+                </div>
+
+                <!-- Right Section with 3 Pictures -->
+                <div class="invisible-table-cell">
+                    <div class="pictures-section right-pictures">
+                        <img class="picture" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\MambauIceCream\photo_2023-12-12_23-15-02.jpg" alt="Ice Candy Flavor 1" onclick="openLightbox(this.src)">
+                        <img class="picture" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\MambauIceCream\photo_2023-12-12_23-14-41.jpg" alt="Ice Candy Flavor 1" onclick="openLightbox(this.src)">
+                        <img class="picture" src="C:\Users\user\Desktop\Personal_Website\Picture-vid\MambauIceCream\photo_2023-12-12_23-15-06.jpg" alt="Ice Candy Flavor 1" onclick="openLightbox(this.src)">
+                        <!-- Add other right pictures here -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Text Content Section -->
+        <div class="text-section">
+            <h2>Indulge in the Sweetness of Our Ice Candies</h2>
+            <p>
+                In October 2023, we students were tasked with a group project that required us to sell an item as part of our group assignment ENT300. My group which consists of Zullfahimi, Naim, Aiman, and Me, decided to sell Ice Candies also known as Ice Cream 1Malaysia. In this business project, we decided to split where Zullfahimi and Aiman sold the Ice Candies at the campus, Naim house to house and me at the chosen shop which is the CafeRojakLipis. The flavor consists of Redbull, AsamBoi, & Blackcurrent! 
+            </p>
+			
+			<p>
+			On October 24, 2023, the day I sell my first ever Ice-candies, with the price of 0.50 cents each, it is safe to say the price is "Rahmah" to the community around it. At first, no one comes to try it but slowly after mouth to mouth with other communities, many people buy the Ice-Candies. At the end of the day, I got to sell over 150 Pieces of Ice Candies. This is really a good achievement for us and we are happy with the friendly community and support from the locals.
+			</p>
+        </div>
+
+        <!-- Lightbox Container -->
+        <div class="lightbox" id="lightbox">
+            <img src="" alt="Enlarged Image" id="lightbox-img">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        </div>
+
+		<script>
+			// Function to open the lightbox
+			function openLightbox(imgSrc) {
+				const lightbox = document.getElementById("lightbox");
+				const lightboxImg = document.getElementById("lightbox-img");
+
+				lightbox.style.display = "flex";
+				lightboxImg.src = imgSrc;
+			}
+
+			// Function to close the lightbox
+			function closeLightbox() {
+				const lightbox = document.getElementById("lightbox");
+				lightbox.style.display = "none";
+			}
+			
+			// Close the lightbox when clicking outside the content
+			window.onclick = function (event) {
+				var lightbox = document.getElementById('lightbox');
+				if (event.target == lightbox) {
+					lightbox.style.display = 'none';
+				}
+			};
+		</script>
+
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div>
+            &copy; 2023-2024 IdhamIdrus. All rights reserved.
+        </div>
+    </footer>
+	
+
+</body>
+
+</html>

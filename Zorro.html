@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idham Idrus - Cosplay Chronicles</title>
+    <link rel="icon" href="C:\Users\user\Desktop\Personal_Website\Prop\icons8-home-avantgarde-16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Existing Styles -->
+    <style>
+        /* Navigation styles */
+        .header-box {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        .logo {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            float: left;
+            margin-left: 20px;
+            color: #ffffff;
+        }
+
+        .navigation {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Additional styles for the new sections */
+        .content-section {
+            text-align: center;
+            margin-top: 50px; /* Adjust the margin-top for the desired spacing */
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-section {
+            text-align: justify;
+            color: #333333;
+            font-size: 18px;
+            margin-bottom: 40px; /* Add margin at the bottom for spacing */
+        }
+
+        /* New styles for the cosplay section */
+        .cosplay-section {
+            text-align: center;
+            margin-top: 30px; /* Adjust the margin-top for the desired spacing */
+            padding: 20px;
+            background: #8fd9ff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			margin-top: 40px; /* Add more top margin for spacing */
+        }
+
+        .videos-section {
+            margin-top: 20px; /* Add margin at the top for spacing */
+            margin-bottom: 20px; /* Add margin at the bottom for spacing */
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .video {
+            width: calc(50% - 10px);
+            margin: 5px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Additional styles for the images */
+        .pictures-section {
+            margin-top: 20px;
+            margin-bottom: 20px; /* Add margin at the bottom for spacing */
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .image {
+            width: 200px; /* Set a fixed width for the images */
+            height: 200px; /* Set a fixed height for the images */
+            margin: 5px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: inline-block;
+            white-space: normal;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Update the background color of .cosplay-section */
+        .cosplay-section {
+            text-align: center;
+            margin-top: 50px; /* Adjust the margin-top for the desired spacing */
+            padding: 20px;
+			background: #dcdcdc; /* buat dark grey color chikit hehe*/
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			color: #333; 
+        }
+
+
+
+        /* Modal styles */
+        #myModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        #myModal img {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+		.close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 100px; /* Add margin for spacing from the top and right edges */
+        }
+
+		/* Add styles for the section divider */
+		.section-divider {
+			border: none; /* Remove default border */
+			border-top: 2px dotted #333333; /* Add a dotted border on top with the color of your choice */
+			margin: 20px auto; /* Adjust the margin for spacing and set 'auto' for horizontal centering */
+			width: 80%; /* Set the desired width of the divider */
+		}
+		     
+		/* Footer styles */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-family: arial;
+        }
+    </style>
+
+    <!-- Modal script -->
+    <script>
+        // Open the modal with the clicked image
+        function openModal(imageId) {
+            var modal = document.getElementById("myModal");
+            var modalImage = document.getElementById("modalImage");
+            var clickedImage = document.getElementById(imageId).getElementsByTagName("img")[0];
+
+            modal.style.display = "block";
+            modalImage.src = clickedImage.src;
+        }
+
+        // Close the modal
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function (event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <!-- Header Box -->
+    <div class="header-box">
+        <!-- Logo Name -->
+        <a href="Index.html">
+            <div class="logo">Idham Idrus &#127775; </div>
+        </a>
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="Index.html">Journey</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="Artwork.html">Artwork</a>
+            <a href="Ecertificate.html">E-Certificate Collection</a>
+            <a href="About.html">About Me</a>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content-section">
+        <!-- Text Content Section -->
+        <div class="text-section">
+            <h2>Introducing Unique World of Cosplay Because I Like Cosplay!</h2>
+            <p>
+			On January 17, 2023, in semester three where the day when I wore a Sherlock cosplay for the task of ELC231 to present our favorite movie I chose to share my story about the Sherlock Holmes movie.
+            </p>
+			
+			<p>
+			On May 03, 2023, in the fourth semester, I did a shooting for a specific subject which is IMD225, the task is we need to promote a specific item or product to make people interested in buying it. I decided to do roleplay as an inspector who caught the culprit stealing of Sherlock Holmes book.
+			</p>
+			
+			<p>
+			On Jun 16, 2023, Alhamdulillah I got to attend the dean's list ceremony where the theme was Masked Theme and I wore a zorro during that ceremony which was quite fun indeed.
+			</p>
+			
+			<p>
+			On December 15, 2023, fifth semester, again, I got to attend the dean and final year student ceremony where the theme was Arabian Night and I wore a "Pak Arab" theme. 
+			</p>
+        </div>
+
+        <hr class="section-divider"> <!-- Add a horizontal line as a section divider -->
+
+        <!-- Cosplay Section -->
+        <div class="cosplay-section">
+            <h2>Cosplay Chronicles</h2>
+            <p>
+				Feel free to watch or take a look at these amazing memorable moments of my cosplay and unique roleplay as a student at this University!
+            </p>
+
+            <!-- Videos Section -->
+            <div class="videos-section">
+                <!-- Replace these with your actual video sources -->
+                <div class="video">
+                    <video width="100%" controls>
+                        <source src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Detective&Sherlock\Idhamholmes.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video">
+                    <video width="100%" controls>
+                        <source src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Detective&Sherlock\PPTVIDHOLMES.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- Add more video elements if needed -->
+            </div>
+
+            <!-- Images Section -->
+            <div class="pictures-section">
+                <!-- Replace these with your actual cosplay images -->
+                <div class="image" id="image1" onclick="openModal('image1')">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Detective&Sherlock\photo_2023-12-12_23-16-03.jpg" alt="Cosplay Image 1">
+                </div>
+                <div class="image" id="image2" onclick="openModal('image2')">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Detective&Sherlock\photo_2023-12-12_23-16-10.jpg" alt="Cosplay Image 2">
+                </div>
+				
+				<div class="image" id="image5" onclick="openModal('image5')">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Detective&Sherlock\GAMBARDEKANSEM5.jpg" alt="Cosplay Image 4">
+                </div>
+				
+                <div class="image" id="image3" onclick="openModal('image3')">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Detective&Sherlock\photo_2023-12-12_23-12-45.jpg" alt="Cosplay Image 3">
+                </div>
+                <div class="image" id="image4" onclick="openModal('image4')">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Detective&Sherlock\photo_2023-12-12_23-13-00.jpg" alt="Cosplay Image 4">
+                </div>                
+
+                <!-- Add more images if needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div>
+            &copy; 2023-2024 Idham Idrus. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Modal Section -->
+    <div id="myModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage">
+    </div>
+
+    <!-- Additional Scripts -->
+    <script>
+        // Function to scroll to the top of the page beforeunload (refresh)
+        window.addEventListener('beforeunload', function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idham Idrus The Achiever</title>
+    <link rel="icon" href="C:\Users\user\Desktop\Personal_Website\Prop\icons8-home-avantgarde-16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f0f0;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Loading Animation */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .letter-holder {
+            padding: 16px;
+        }
+
+        .letter {
+            float: left;
+            font-size: 30px;
+            color: #777;
+        }
+
+        .load-6 .letter {
+            animation-name: loadingF;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-direction: linear;
+        }
+
+        .l-1 {
+            animation-delay: 0.48s;
+        }
+
+        .l-2 {
+            animation-delay: 0.6s;
+        }
+
+        .l-3 {
+            animation-delay: 0.72s;
+        }
+
+        .l-4 {
+            animation-delay: 0.84s;
+        }
+
+        .l-5 {
+            animation-delay: 0.96s;
+        }
+
+        .l-6 {
+            animation-delay: 1.08s;
+        }
+
+        .l-7 {
+            animation-delay: 1.2s;
+        }
+
+        .l-8 {
+            animation-delay: 1.32s;
+        }
+
+        .l-9 {
+            animation-delay: 1.44s;
+        }
+
+        .l-10 {
+            animation-delay: 1.56s;
+        }
+
+        @keyframes loadingF {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Header Box */
+        .header-box {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        .logo {
+            font-family: arial, sans-serif;
+            font-size: 24px;
+            float: left;
+            margin-left: 20px;
+            color: #ffffff;
+        }
+
+        /* Welcome Animation Box */
+        .welcome-box {
+            background: #4285f4;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 103vh;
+            position: relative;
+            z-index: 3;
+            overflow: hidden;
+        }
+
+        .container span {
+            display: block;
+        }
+
+        .text1 {
+            color: white;
+            font-size: 70px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            position: relative;
+            animation: text1 3s 1;
+        }
+
+        .text2 {
+            font-size: 30px;
+            color: white;
+            font-family: '(Cari unik font nanti)', sans-serif;
+            opacity: 0;
+            animation: text2 2s forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes text1 {
+            0% {
+                color: black;
+                margin-bottom: -40px;
+            }
+
+            30% {
+                letter-spacing: 25px;
+                margin-bottom: -40px;
+            }
+
+            85% {
+                letter-spacing: 8px;
+                margin-bottom: -40px;
+            }
+        }
+
+        @keyframes text2 {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navigation {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+
+        /* Journey Section */
+        .journey-section {
+            padding: 40px;
+            text-align: center;
+            background: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        /* Updated styles for image boxes */
+        .image-box {
+            width: calc(33.33% - 40px);
+            text-align: center;
+            margin: 20px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+			transition: box-shadow 0.3s ease-in-out; /* Add a smooth transition effect for the shadow */
+        }
+
+        .journey-image {
+            width: 100%;
+            height: 400px;
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .journey-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            color: white !important;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 2;
+        }
+
+        .image-box:hover .journey-image {
+            transform: scale(1.2);
+            filter: brightness(70%);
+        }
+
+        .image-box:hover .image-title {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loading Animation -->
+    <div class="content">
+        <div class="load-wrapp">
+            <div class="load-6">
+                <div class="letter-holder">
+                    <div class="l-1 letter">L</div>
+                    <div class="l-2 letter">O</div>
+                    <div class="l-3 letter">A</div>
+                    <div class="l-4 letter">D</div>
+                    <div class="l-5 letter">I</div>
+                    <div class="l-6 letter">N</div>
+                    <div class="l-7 letter">G</div>
+                    <div class="l-8 letter">.</div>
+                    <div class="l-9 letter">.</div>
+                    <div class="l-10 letter">.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content" style="display: none;">
+
+        <!-- Welcome Animation Box -->
+        <div class="welcome-box">
+            <div class="container">
+                <span class="text1">Welcome To My</span>
+                <span class="text2">Personal Journey Website</span>
+            </div>
+        </div>
+
+        <!-- Header Box (Tempat Logo atau font unique clickable home-->
+        <div class="header-box">
+            <!-- Logo Name -->
+            <a href="Index.html">
+                <div class="logo">Idham Idrus &#127775; </div>
+            </a>
+            <!-- Navigation(Tempat Pilihan Lain selain homepage) -->
+            <div class="navigation">
+                <a href="Index.html">Journey</a>
+                <a href="Achievements.html">Achievements</a>
+                <a href="Artwork.html">Artwork</a>
+                <a href="Ecertificate.html">E-Certificate Collection</a>
+                <a href="About.html">About Me</a>
+            </div>
+        </div>
+
+        <!-- Journey Section (Gambar, title dan kandungan dia gituh)-->
+        <div class="journey-section">
+            <div class="image-container">
+                <!-- Clickable Images with Titles -->
+                <div class="image-box" onclick="navigateTo('Breakfast.html')">
+                    <div class="journey-image">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Breakfast\photo_2023-12-14_11-27-35.jpg" alt="Image 1">
+                        <div class="image-title">Breakfast? or Break First? (Ft. CafeRojakLipis, Dr. Ida Nadia & Ms. NorHashimah)</div>
+                    </div>
+                </div>
+
+                <div class="image-box" onclick="navigateTo('Fashionshow.html')">
+                    <div class="journey-image">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\Gambar_Mario.jpg" alt="Image 2">
+                        <div class="image-title">Fashion show & Treasure Hunts Class Activity (Ft. Dr. Ida Nadia & Aiman Mokhtar</div>
+                    </div>
+                </div>
+
+                <div class="image-box" onclick="navigateTo('Mambau.html')">
+                    <div class="journey-image">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\MambauIceCream\photo_2023-12-12_23-14-54.jpg"
+                            alt="Image 3">
+                        <div class="image-title">Mambau Ice-candy? or Ice-candy Rahmah?</div>
+                    </div>
+                </div>
+
+                <div class="image-box" onclick="navigateTo('Catalogue.html')">
+                    <div class="journey-image">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\CatalogueAdventure\photo_2023-12-20_23-42-48.jpg"
+                            alt="Image 4">
+                        <div class="image-title">Cataloguing Adventure!? (Ft. PNM, KL Library & StarPickAudio Cafe)</div>
+                    </div>
+                </div>
+
+                <div class="image-box" onclick="navigateTo('Zorro.html')">
+                    <div class="journey-image">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Detective&Sherlock\photo_2023-12-12_23-16-03.jpg"
+                            alt="Image 5">
+                        <div class="image-title">Did I Become Detective? Sherlock? Or Zorro!?</div>
+                    </div>
+                </div>
+
+                <div class="image-box" onclick="navigateTo('Archive.html')">
+                    <div class="journey-image">
+                        <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\ArchiveTour\archivepic.jpg" alt="Image 6">
+                        <div class="image-title">Archive Tour Trip!? (Ft. Naim Nedi)</div>
+                    </div>
+                </div>
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+
+ <!-- Footer Section -->
+    <footer>
+        <div style="background: rgba(0, 0, 0, 0.9); padding: 10px; text-align: center; color: white;">
+            &copy; 2023-2024 IdhamIdrus. Universiti Teknologi MARA. All rights reserved.
+        </div>
+    </footer>
+
+        <!-- JavaScript for displaying titles (Untuk kasi title appear kat gambar)-->
+        <script>
+            // Wait for the page to load
+            document.addEventListener("DOMContentLoaded", function () {
+                // Set a timeout to hide the loading animation and reveal the main content after 3000 milliseconds (3 seconds)
+                setTimeout(function () {
+                    document.querySelector('.content').style.display = 'none';
+                    document.querySelector('.main-content').style.display = 'block';
+                    // You can add code here to reveal the main content or redirect to another page
+                }, 3000);
+            });
+
+            function showTitle(title, url) {
+                navigateTo(url);
+            }
+
+            function navigateTo(url) {
+                window.location.href = url;
+            }
+			
+				// Function to scroll to the top of the page on load or refresh
+			window.onload = function () {
+				window.scrollTo(0, 0);
+			};
+        </script>
+</body>
+
+</html>

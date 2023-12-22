@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="icon" href="C:\Users\user\Desktop\Personal_Website\Prop\icons8-home-avantgarde-16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f0f0;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Box */
+        .header-box {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        .logo {
+            font-family: , sans-serif;
+            font-size: 24px;
+            float: left;
+            margin-left: 20px;
+            color: #ffffff;
+        }
+
+        .navigation {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        /* Content Layout - About Me */
+        .content-layout {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 80px auto 40px; /* Increased margin at the bottom */
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .left-content {
+            width: 60%; /* Adjusted width for the left content */
+            margin-right: 20px; /* Added margin for separation */
+			margin-top: -20px; /* Adjusted negative margin to push it up */
+        }
+
+        .right-content {
+            width: 40%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .about-me img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            float: right; /* Make the image float to the right */
+            margin-left: 20px; /* Add margin to separate text and image */
+        }
+
+        .about-me p {
+            margin-bottom: 20px;
+        }
+
+        .resume,
+        .contact-info,
+        .networking {
+            margin-bottom: 20px;
+        }
+
+        .download-link,
+        .networking a {
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            border: none; /* Remove the border */
+        }
+
+        .networking img {
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+        }
+
+        .resume-content {
+            float: right; /* Align the content to the right */
+        }
+
+        /* Footer styles */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-family: arial;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Box -->
+    <div class="header-box">
+        <!-- Logo Name -->
+        <a href="Index.html">
+            <div class="logo">Idham Idrus &#127775;</div>
+        </a>
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="Index.html">Journey</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="Artwork.html">Artwork</a>
+            <a href="Ecertificate.html">E-Certificate Collection</a>
+            <a href="About.html">About Me</a>
+        </div>
+    </div>
+
+    <!-- Content Layout - About Me -->
+    <div class="content-layout about-me">
+        <!-- Left Content - Personal Information -->
+        <div class="left-content">
+            <h1>MR. MUHAMMAD IDHAM BIN IDRUS</h1>
+        </div>
+
+        <!-- Right Content - Picture -->
+        <div class="right-content"style="width: 60%;"> 
+            <img src="C:\Users\user\Desktop\Personal_Website\Prop\photo_2023-12-16_14-55-39.jpg" alt="My Picture">
+            <h2>About Me</h2>
+			<p> Why hello there. I’m an associate with the creative, information, and entertainment world. </p>
+
+			<p>I chose these particular words on purpose, why? because it's fun and attractive to your attention, indeed.</p>
+
+			<p> My hobby is being creative, what do you mean by that? Everything that required you to be creative and imaginative! It can be Writing, Drawing, Building, and heck even taking your sweet time too! </p>
+			
+			<p> Q: What are I like? </p>
+			
+			<p> A: I Like You. Just kidding, basically, I like to share my fun adventure world, it can be in presentation, story, and even amazing surprises that no one ever thought of!</p>
+			
+			<p> I hold on to the philosophy that "Every Individual Is Like A Star!". Why? it is because everyone can be Shine! It can be that whether you are shining alone or even shining together with the others. That means, be Your own self STAR! </p>
+			
+			<p> That's It, Later Nerds! </p>
+        </div>
+
+        <!-- Resume, Contact Info, Networking -->
+        <div class="right-content resume-content">
+            <div class="resume">
+                <h2>Résumé</h2>
+                <p>Check out my resume here: <a href="C:\Users\user\Desktop\Personal_Website\Prop\RESUME IDHAM.png" class="download-link" target="-blank" download>Click Here</a></p>
+            </div>
+
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <p>017 232 xxxx <br> 2021631702@student.uitm.edu.my </p>
+            </div>
+
+            <div class="networking">
+                <h2>Connect</h2>
+                <a href="https://www.linkedin.com/in/muhammad-idham-bin-idrus-75a5b8224/" target="_blank">&#x1F30E;<span class="tooltiptext">LinkedIn</span></a> <!-- LinkedIn Unicode character -->
+                <a href="https://twitter.com/IcyEnd_GT" target="_blank">&#x2716;  <span class="tooltiptext">Twitter</span></a> <!-- X Unicode character -->
+            </div>
+
+            <div class="document">
+                <h2>Helpful File Document</h2>
+                <p><a href="C:\Users\user\Desktop\Personal_Website\Prop\PLANNER_MAR23-AUG23 ORIGINAL.pdf" class="download-link" target="-blank" download>Download Here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div>
+            &copy; 2023-2024 IdhamIdrus. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Function to scroll to the top of the page beforeunload (refresh)
+        window.addEventListener('beforeunload', function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
+
+</body>
+
+</html>

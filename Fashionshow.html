@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Show Extravaganza</title>
+    <link rel="icon" href="C:\Users\user\Desktop\Personal_Website\Prop\icons8-home-avantgarde-16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+		body.modal-open {
+			overflow: hidden;
+		}
+
+        .header-box {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        .logo {
+            font-family: arial , sans-serif;
+            font-size: 24px;
+            float: left;
+            margin-left: 20px;
+            color: #ffffff;
+        }
+
+        .navigation {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+
+        .fashion-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        video.fashion-video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			z-index: auto; /* Adjust the z-index to a higher value, for example, 1 */
+			color: #fff;
+			box-sizing: border-box;
+		}
+
+		/* Add this style for the overlay on text */
+		.overlay-text {
+			background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+			padding: 20px; /* Adjust the padding as needed */
+			border-radius: 10px; /* Rounded corners */
+			position: relative; /* Add this line */
+			z-index: auto; /* Adjust the z-index to a higher value, for example, 2 */
+		}
+
+
+        .text-section-fasion {
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pictures-mind-map {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+		.picture-rectangle {
+			width: 150px;
+			height: 100px;
+			border-radius: 10px;
+			overflow: hidden;
+			transition: transform 0.3s ease;
+			position: relative; /* Add this line */
+			z-index: 2; /* Add this line */
+        }
+		
+		.picture-rectangle:hover {
+			transform: scale(1.2);
+			z-index: 3; 
+		}
+
+        .picture-rectangle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pictures-mosaic {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .picture-fasion {
+            flex: 0 0 calc(33.333% - 20px);
+            max-width: calc(33.333% - 20px);
+            height: auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+		
+		.modal {
+            display: none;
+            position: fixed;
+            z-index: 5;
+            padding-top: 20px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+			position: relative;
+			z-index: 1; /* Set a higher z-index value */
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+			z-index: 2; /* Set a higher z-index value */
+        }
+		
+		.overlay-treasure-hunt {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			z-index: 1;
+			color: #fff;
+			box-sizing: border-box;
+		}
+
+		/* Add this style for the overlay on text in the treasure hunt section */
+		.overlay-text-treasure-hunt {
+			background: rgba(0, 0, 0, 0.6);
+			padding: 20px;
+			border-radius: 10px;
+			position: relative;
+			z-index: 2;
+		}
+
+		.scroll-down-text {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			color: #fff;
+			font-size: 16px;
+			font-family: sans-serif;
+			text-align: center;
+			background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+			padding: 3px; /* Adjust padding as needed */
+			border-radius: 5px; /* Add border-radius for rounded corners */
+		}
+
+
+		/* Footer styles */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-family: arial;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Box (Tempat Logo atau font unique clickable home-->
+    <div class="header-box">
+        <!-- Logo Name -->
+        <a href="Index.html">
+            <div class="logo">Idham Idrus &#127775; </div>
+        </a>
+        <!-- Navigation(Tempat Pilihan Lain selain homepage) -->
+        <div class="navigation">
+            <a href="Index.html">Journey</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="Artwork.html">Artwork</a>
+            <a href="Ecertificate.html">E-Certificate Collection</a>
+            <a href="About.html">About Me</a>
+        </div>
+    </div>
+
+    <!-- Fashion Show Section -->
+    <div class="fashion-section" id="fashionSection">
+        <!-- Video Background -->
+        <video id="fashionVideo" class="fashion-video-background" autoplay muted loop>
+            <source src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\IMG_1187.MOV" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Overlay Content Container -->
+        <div class="overlay">
+            <!-- Text Content Section -->
+            <div id="text" class="text-section-fasion">
+                <div class="overlay-text">
+                    <h2>Fashion Show Extravaganza</h2>
+                    <p>
+						On 08 December 2023, with the collaboration of the KafeRojakLipis as our sponsors and Dr. Ida Nadia allowed me to host an event class activity at the Smart Classroom PTAR as a mark for final last semester year, called "Smart Program Class 5D" Activity. With the support of our Class Representative, Aiman Mokhtar, we host two special activities which are the Treasure Hunts & Fashion Show. Please, feel free to take a look at our memory of fashion class activities in this section. Click the Image to see the full.
+					</p>
+					<p>		
+						The fashion show activities start on the second course after the treasure hunts activities are complete, this fashion show is simple where four groups need to pick one member to be their fashion ambassador. Some costumes and wearable items were given randomly and they were required to complete it within 1 hour in a group. Our lecturer, Dr. Ida Nadia works as an advisor and judger to evaluate and pick the best winner for the fashion show class.
+                    </p>
+                </div>
+            </div>
+
+		 <!-- "Scroll Down" Text -->
+				<div class="scroll-down-text" id="scrollDownText">
+					<p>&#8681; CLICK HERE &#8681;</p>
+				</div>
+
+            <!-- Pictures Mind Map -->
+            <div id="pictures" class="pictures-mind-map">
+                <!-- Replace these with your actual picture paths -->
+                <div class="picture-rectangle" id="fashionPicture1">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-07_17-09-38.jpg" alt="Picture 1">
+                </div>
+                <div class="picture-rectangle" id="fashionPicture2">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-07_17-09-54.jpg" alt="Picture 2">
+                </div>
+                <div class="picture-rectangle" id="fashionPicture3">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-07_19-53-30.jpg" alt="Picture 3">
+                </div>
+                <div class="picture-rectangle" id="fashionPicture4">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-07_17-09-39.jpg" alt="Picture 4">
+                </div>
+                <div class="picture-rectangle" id="fashionPicture5">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-07_19-07-10.jpg" alt="Picture 5">
+                </div>
+                <div class="picture-rectangle" id="fashionPicture6">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-07_19-07-22.jpg" alt="Picture 6">
+                </div>
+                <!-- Add more pictures as needed -->
+				
+				<!-- Modal container for larger image -->
+				<div id="imageModal" class="modal">
+					<span class="close" onclick="closeModal()">&times;</span>
+					<img class="modal-content" id="modalImage">
+				</div>
+				
+            </div>
+        </div>
+    </div>
+
+    <!-- Treasure Hunt Section -->
+    <div class="fashion-section" id="treasureHuntSection">
+        <!-- Video Background -->
+        <video id="treasureHuntVideo" class="fashion-video-background" autoplay muted loop>
+            <source src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Fashionshow\treasurehunts.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Overlay Content Container -->
+        <div class="overlay">
+            <!-- Text Content Section -->
+            <div id="text" class="text-section-fasion">
+                <div class="overlay-text">
+                    <h2>Treasure Hunt Adventure</h2>
+                    <p>
+                       We begin with the treasure hunts as our first course activities that start around 2.00 p.m. This treasure hunts consist of three PTAR floor levels that work like escape rooms where the participants are required to solve puzzle before unlocking further to the depth of the final floor. On the final floor which is floor 1 on the PTAR, participants are required to solve the riddle that gives the password to unlock the treasure. Note that each floor will eliminate the members or cause them to wear clown noses.
+                    </p>
+					<p>
+						At the end of the program, all classmates member including lecturers were given merchandise of 5D that included KeyChain, Calendars, and Voucher Breakfast Worth of 3 MYR by KafeRojakLipis. This program class not only unleashed the potential and creativity of the classmates but also created better bonds and teamwork between them!
+					</p>
+                </div>
+            </div>
+
+             <!-- Pictures Mind Map -->
+            <div id="pictures" class="pictures-mind-map">
+                <!-- Replace these with your actual picture paths -->
+                <div class="picture-rectangle" id="treasureHuntPicture1">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-17_11-05-34.jpg" alt="Picture 1">
+                </div>
+                <div class="picture-rectangle" id="treasureHuntPicture2">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-17_11-05-56 (2).jpg" alt="Picture 2">
+                </div>
+                <div class="picture-rectangle" id="treasureHuntPicture3">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-17_11-05-56.jpg" alt="Picture 3">
+                </div>
+                <div class="picture-rectangle" id="treasureHuntPicture4">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-17_01-43-31.jpg" alt="Picture 4">
+                </div>
+                <div class="picture-rectangle" id="treasureHuntPicture5">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-17_01-44-15.jpg" alt="Picture 5">
+                </div>
+                <div class="picture-rectangle" id="treasureHuntPicture6">
+                    <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\FashionShow\photo_2023-12-17_01-45-32.jpg" alt="Picture 6">
+                </div>
+                <!-- Add more pictures as needed -->
+				
+				
+				<!-- Modal container for larger image treasure hunt section -->
+				<div class="modal" id="treasureHuntModal">
+					<span class="close" onclick="closeModal()">&times;</span>
+					<img class="modal-content" id="modalImage">
+				</div>
+            </div>
+        </div>
+    </div>
+	
+    <!-- Footer Section -->
+    <footer>
+        <div>
+            &copy; 2023-2024 IdhamIdrus. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+	
+		// Get the modal and modal image elements
+		var modal = document.getElementById('imageModal');
+		var modalImage = document.getElementById('modalImage');
+
+		// Add a click event listener to each small picture
+		document.getElementById('fashionPicture1').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-07_17-09-38.jpg");
+		});
+
+		document.getElementById('treasureHuntPicture1').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-17_11-05-34.jpg");
+		});
+		
+		document.getElementById('fashionPicture2').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-07_17-09-54.jpg");
+		});
+	
+		document.getElementById('treasureHuntPicture2').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-17_11-05-56 (2).jpg");
+		});
+	
+		document.getElementById('fashionPicture3').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-07_19-53-30.jpg");
+		});
+	
+		document.getElementById('treasureHuntPicture3').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-17_11-05-56.jpg");
+		});
+	
+		document.getElementById('fashionPicture4').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-07_17-09-39.jpg");
+		});
+	
+		document.getElementById('treasureHuntPicture4').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-17_01-43-31.jpg");
+		});
+	
+		document.getElementById('fashionPicture5').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-07_19-07-10.jpg");
+		});
+	
+		document.getElementById('treasureHuntPicture5').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-17_01-44-15.jpg");
+		});
+	
+		document.getElementById('fashionPicture6').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-07_19-07-22.jpg");
+		});
+	
+		document.getElementById('treasureHuntPicture6').addEventListener('click', function () {
+			openModal("C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\photo_2023-12-17_01-45-32.jpg");
+		});
+	
+		// Function to open the modal with a specific image
+		function openModal(imageSrc) {
+			modal.style.display = 'flex'; // Use flex to center vertically and horizontally
+			modalImage.src = imageSrc;
+			document.body.classList.add('modal-open'); // Add the class to disable scrolling
+		}
+
+		// Function to close the modal
+		function closeModal() {
+			modal.style.display = 'none';
+			document.body.classList.remove('modal-open'); // Remove the class to enable scrolling
+		}
+				 
+		// Close the modal when clicking outside the content
+        window.onclick = function (event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                var modal = modals[i];
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+					document.body.classList.remove('modal-open'); // Remove the class to enable scrolling
+                }
+            }
+		}
+	
+			// Function to scroll down when clicking the "scroll down" text
+		document.getElementById('scrollDownText').addEventListener('click', function () {
+			scrollToSection('treasureHuntSection'); // Replace 'treasureHuntSection' with the desired section id
+		});
+	
+			// Helper function to scroll to a specific section
+		function scrollToSection(sectionId) {
+			const section = document.getElementById(sectionId);
+			if (section) {
+				section.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+				});
+			}
+		}
+
+	
+        // Listen for scroll events and change the video background accordingly
+        window.addEventListener("scroll", function () {
+            var fashionSection = document.getElementById("fashionSection");
+            var treasureHuntSection = document.getElementById("treasureHuntSection");
+
+            // Change the video source based on the scroll position
+            if (isElementInViewport(fashionSection)) {
+                document.getElementById("fashionVideo").src = "C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\IMG_1187.MOV";
+            } else if (isElementInViewport(treasureHuntSection)) {
+                document.getElementById("fashionVideo").src = "C:\\Users\\user\\Desktop\\Personal_Website\\Picture-vid\\FashionShow\\treasurehunts.mp4";
+            }
+        });
+
+			// Function to scroll to the top of the page beforeunload (refresh)
+			window.addEventListener('beforeunload', function () {
+				window.scrollTo(0, 0);
+			});
+
+        // Helper function to check if an element is in the viewport
+        function isElementInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        
+}
+    </script>
+
+</body>
+
+</html>

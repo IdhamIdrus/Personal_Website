@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    <link rel="icon" href="C:\Users\user\Desktop\Personal_Website\Prop\icons8-home-avantgarde-16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f0f0;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Box */
+        .header-box {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        .logo {
+            font-family: sans-serif;
+            font-size: 24px;
+            float: left;
+            margin-left: 20px;
+            color: #ffffff;
+        }
+
+        .navigation {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        /* Content Layout */
+        .content-layout {
+            display: flex;
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .left-content {
+            width: 60%;
+            padding-right: 20px;
+        }
+
+        .right-content {
+            width: 40%;
+        }
+
+        /* Placeholder Styles (Replace with your actual content) */
+        .left-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .right-content img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .right-content iframe {
+            width: 100%;
+            height: 300px; /* Adjust the height as needed */
+            margin-bottom: 20px;
+            object-fit: cover; /*to preserve aspect ratio (kasi dia fit basically) */
+        }
+
+        .section-margin {
+            margin-bottom: 20px;
+        }
+
+        /* New class for image container */
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        /* New class for images */
+        .image-container img {
+            width: 300px;
+            height: 500px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .image-container img:hover {
+            opacity: 0.7;
+        }
+
+        /* New class for modal container */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* New class for modal content */
+        .modal-content {
+            margin: 5% auto;
+            width: 90%;
+            max-width: 700px;
+            position: relative;
+        }
+
+        /* New class for close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #000; /* Changed to black for better visibility */
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2; /* Ensures it's above the modal content */
+        }
+
+        /* New class for modal image */
+        .modal-img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Resizable image with zoom effect */
+        .resizable-image {
+            width: 300px;
+            height: 200px;
+            transition: transform 0.3s;
+        }
+
+        .resizable-image:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hover effect for all images */
+        .hover-effect {
+            transition: transform 0.3s;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Box (Tempat Logo atau font unique clickable home-->
+    <div class="header-box">
+        <!-- Logo Name -->
+        <a href="Index.html">
+            <div class="logo">Idham Idrus &#127775; </div>
+        </a>
+        <!-- Navigation(Tempat Pilihan Lain selain homepage) -->
+        <div class="navigation">
+            <a href="Index.html">Journey</a>
+            <a href="Achievements.html">Achievements</a>
+            <a href="Artwork.html">Artwork</a>
+            <a href="Ecertificate.html">E-Certificate Collection</a>
+            <a href="About.html">About Me</a>
+        </div>
+    </div>
+
+    <!-- Content Layout -->
+    <div class="content-layout">
+
+        <!-- Left Content (Write your story or experience here) -->
+        <div class="left-content">
+            <h1>FGV ESSAY COMPETITION WINNER 2021</h1>
+            <p class="section-margin">
+                In December 2021, I was called by the FGV Organization that I got picked as a TOP 4 Winner of the Essay Competition Under Bahasa Melayu. And It's an International one!
+            </p>
+
+            <h2>What Is The Competition About?</h2>
+            <p>
+                The competition focuses on the essay regarding the issue of increasing climate change in Malaysia. As a writer or participants, we are required to write long essays by generating an idea suggestion, or even theory solution on how this country could potentially decrease or solve the issues. Feel free to click the image and watch the video by double-clicking it.
+            </p>
+
+            <div class="image-container">
+			<img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Smart4climate\1671766919830.jpeg"
+				 alt="Image 1" style="width: 300px; height: 200px; cursor: pointer; transition: 0.3s;" onclick="openModal(this.src)" class="section-margin">
+				 
+                <iframe width="300" height="200"
+                    src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Smart4climate\video_2023-12-13_21-52-31.mp4"
+                    frameborder="0" allowfullscreen class="section-margin"></iframe>
+            </div>
+
+            <h1>HIGHSCHOOL MAGAZINE PUBLISH</h1>
+            <p class="section-margin">
+                Before MCO occurred, my high school announced that they planning to find the best story to be featured in the High School Magazine. They asked any interested students to come to the office and submit their literature artwork to be checked before being confirmed to be chosen.
+            </p>
+
+            <h2>How I Got Picked?</h2>
+            <p>
+				I come to the office and submit my first story called <a href="C:\Users\user\Desktop\Personal_Website\Prop\SekolahKu, BurungKu.pdf" class="download-link" target="-blank" download>SekolahKu, Burungku</a>.</p> <p>It was a story about my classmates adventure story of meeting a birds that symbolized graduation as we are near the graduation season before the fire nation attack (Pun Intended :p). 
+            </p>
+			
+			<p> At first it got rejected several times due to so many typos, grammar error and languages issues. But after so many times I fix it,finally it got accepted! I was so happy hearing it finally got accepted not until I got a letter informing me that the contents are too long to be fit into the magazine... </p>
+			
+			<p>I was so sad that it made my hopes downfall so hard, I was feeling sad and depressed because there was no more chance to submit the literature as it had closed the submission as the trial SPM was near... Not until the hope appeared to me once again that I get an idea how to counter it back! </p>
+
+			<p>I stand on my own feet by proving that I can submit my literature works even if it sounds ridiculous, How? Since we got SPM Bahasa Melayu in the Essay Section, there is always a section that people rarely take which is the "STORY" section. And that's where I prepare by grinding myself into all possibilities of stories that I could generate and write with.</p>
+			
+			<p>It was a gambling try as the chance of people recognizing it is rare but when the trial SPM Bahasa Melayu came, I quickly checked what the essay story wanted about, and it was about "Malaysia Patriotic Theme", I took this opportunity and grind as much as possible and this is where my teachers approved that the story is indeed worthy to be featured on the magazine :D </p>
+			
+			<p> Please take a sit and have a cup of tea while reading this Literature Essay of Mine: </p>
+
+            <div class="image-container">
+                <!-- Hover effect added -->
+                <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Smart4climate\photo_2023-12-22_15-05-27.jpg"
+                    alt="Image 2" class="modal-trigger hover-effect" onclick="openModal(this.src)">
+            </div>
+            <!-- Add more text sections as needed -->
+        </div>
+
+        <!-- Right Content (Images and Videos) -->
+        <div class="right-content">
+            <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Smart4climate\photo_2023-12-12_20-39-02.jpg"
+                alt="Image 2">
+
+            <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Smart4climate\photo_2023-12-14_19-07-42.jpg"
+                alt="Image 2">
+			
+			<!-- Hover effect added -->
+                <img src="C:\Users\user\Desktop\Personal_Website\Picture-vid\Smart4climate\photo_2023-12-14_19-07-422 .jpg"
+                    alt="Image 2" class="modal-trigger hover-effect" onclick="openModal(this.src)">
+            <!-- Add more images and videos as needed -->
+        </div>
+
+    </div>
+
+    <!-- Modal container -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img src="" alt="Modal Image" class="modal-img" id="modalImage">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div style="background: rgba(0, 0, 0, 0.9); padding: 10px; text-align: center; color: white;">
+            &copy; 2023-2024 Idham Idrus. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Function to scroll to the top of the page beforeunload (refresh)
+        window.addEventListener('beforeunload', function () {
+            window.scrollTo(0, 0);
+        });
+
+        // Function to open the modal
+        function openModal(imgSrc) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("modalImage").src = imgSrc;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Close the modal when clicking outside the content
+        window.onclick = function (event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                var modal = modals[i];
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+        }
+
+        // Get all elements with the class "modal-trigger" and attach a click event listener
+        var modalTriggers = document.getElementsByClassName("modal-trigger");
+        for (var i = 0; i < modalTriggers.length; i++) {
+            modalTriggers[i].addEventListener("click", function () {
+                openModal(this.src);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
