@@ -1,2 +1,2 @@
 # Personal_Website
-Group Assignment Personal Web
+Project Assignment Personal Web
